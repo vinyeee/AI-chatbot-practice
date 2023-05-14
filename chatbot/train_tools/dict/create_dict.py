@@ -3,7 +3,8 @@
 #
 import os
 import sys
-sys.path.append('c:/Users/YB/Desktop/chatbot') 
+sys.path.append('chatbot') 
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 from utils.Preprocess import Preprocess
 from tensorflow.keras import preprocessing
@@ -12,14 +13,14 @@ import pickle
 
 # 말뭉치 데이터 읽어오기
 def read_corpus_data(filename):
-    with open(filename, 'r', encoding = 'UTF8') as f:
+    with open(filename, 'r', encoding='UTF-8') as f:
         data = [line.split('\t') for line in f.read().splitlines()]
         data = data[1:]  # 헤더 제거
     return data
 
 
 # 말뭉치 데이터 가져오기
-corpus_data = read_corpus_data('c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/train_tools/dict/corpus.txt')
+corpus_data = read_corpus_data("C:/Users/YB/Desktop/chatbot/chatbot/train_tools/dict/corpus.txt")
 
 # 말뭉치 데이터에서 키워드만 추출해서 사전 리스트 생성
 p = Preprocess()

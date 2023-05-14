@@ -1,7 +1,7 @@
 import pymysql
 import openpyxl
 import sys
-sys.path.append('c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot')
+sys.path.append('chatbot')
 
 from config.DatabaseConfig import *  # DB 접속 정보 불러오기
 
@@ -43,7 +43,7 @@ def insert_data(db, xls_row):
         db.commit()
 
 
-train_file = 'C:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/train_tools/qna/train_data.xlsx'
+train_file = r'C:\Users\YB\Desktop\chatbot\chatbot\train_tools\qna\train_data.xlsx'
 db = None
 try:
     db = pymysql.connect(

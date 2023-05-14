@@ -1,17 +1,18 @@
 import sys
+sys.path.append('chatbot') 
 import pickle
 from utils.Preprocess import Preprocess
 
-sys.path.append('c:/Users/YB/Desktop/chatbot') 
+
 # 단어 사전 불러오기
-f = open("c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/chatbot_dict.bin", "rb")
+f = open("C:/Users/YB/Desktop/chatbot/chatbot_dict.bin", "rb")
 word_index = pickle.load(f)
 f.close()
 
 sent = input()
 
 # 전처리 객체 생성
-p = Preprocess(userdic='c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/utils/user_dic.tsv')
+p = Preprocess(userdic='C:/Users/YB/Desktop/chatbot/chatbot/utils/user_dic.tsv')
 
 # 형태소 분석기 실행
 pos = p.pos(sent)
@@ -24,3 +25,6 @@ for word in keywords:
     except KeyError:
         # 해당 단어가 사전에 없는 경우 OOV 처리
         print(word, word_index['OOV'])
+
+
+

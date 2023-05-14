@@ -1,7 +1,7 @@
 # 필요한 모듈 임포트
 import os
 import sys
-sys.path.append('c:/Users/YB/Desktop/chatbot') 
+sys.path.append('chatbot') 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import pandas as pd
@@ -11,14 +11,14 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Embedding, Dense, Dropout, Conv1D, GlobalMaxPool1D, concatenate
 
 # 데이터 읽어오기
-train_file = "c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/models/intent/total_train_data.csv"
+train_file = "C:/Users/YB/Desktop/chatbot/chatbot/models/intent/total_train_data.csv"
 data = pd.read_csv(train_file, delimiter=',')
 queries = data['query'].tolist()
 intents = data['intent'].tolist()
 
 from utils.Preprocess import Preprocess
-p = Preprocess(word2index_dic='c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/chatbot_dict.bin',
-               userdic='c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/utils/user_dic.tsv')
+p = Preprocess(word2index_dic='C:/Users/YB/Desktop/chatbot/chatbot_dict.bin',
+               userdic='C:/Users/YB/Desktop/chatbot/chatbot/utils/user_dic.tsv')
 
 # 단어 시퀀스 생성
 sequences = []

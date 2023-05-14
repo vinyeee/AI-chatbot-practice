@@ -1,11 +1,11 @@
 import sys
-sys.path.append('c:/Users/YB/Desktop/chatbot') 
+sys.path.append('chatbot') 
 from utils.Preprocess import Preprocess
 
 sent = input()
 
 # 전처리 객체 생성d
-p = Preprocess(userdic='c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot/utils/user_dic.tsv')
+p = Preprocess(userdic=r'C:\Users\YB\Desktop\chatbot\chatbot\utils\user_dic.tsv')
 
 # 형태소 분석기 실행
 pos = p.pos(sent)

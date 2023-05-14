@@ -1,6 +1,6 @@
 import pymysql
 import sys
-sys.path.append('c:/Users/1dlwk/Desktop/GnB/ai_project/chatbot')
+sys.path.append('chatbot')
 
 from config.DatabaseConfig import *  # DB 접속 정보 불러오기
 
